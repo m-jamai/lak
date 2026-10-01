@@ -1,518 +1,441 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Jamai — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mohammed Jamai — Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <!--
-    CONTENT MAP — each piece of information lives in ONE place only
-    (see "Content guidelines" in README.md)
-
-    Sidebar ...... logo + name (= link to Profile), navigation, availability
-    Profile ...... business card (photo, title, location, bio, profile links),
-                   4 core capabilities, 4 key skills, education,
-                   certifications, languages
-    Experiences .. professional experience, internships & academic projects,
-                   resume download (EN / FR / AR)
-    Projects ..... personal and technical projects, full technical skills
-    Resources .... content from js/resources.js (3 categories)
+    CONTENT MAP
+    Landing ...... minimal welcome card + Profile CTA
+    Profile ...... detailed profile, 4 core areas, education, certifications, languages
+    Experiences .. professional experience, internships & academic projects
+    Projects ..... six projects + complete technical skills
+    Resources .... articles, documents/tools, recommendations
     Contact ...... email, location, LinkedIn, resume links
+    Terms ........ terms of use
 -->
-
-    <div class="wrapper">
-        <aside>
-            <button class="brand-block brand-link" onclick="switchView('profile')" aria-label="Mohammed Jamai — go to Profile">
-                <span class="logo-btn"><img class="logo" src="assets/img/logo-mark.svg" alt="" width="44" height="44"></span>
-                <span class="full-name">Mohammed Jamai</span>
-            </button>
-
-            <nav aria-label="Main">
-                <ul class="nav-list">
-                    <li class="nav-link" data-view="profile" onclick="switchView('profile')"><span class="nav-icon" aria-hidden="true">⌂</span><span>Experiences</span></li>
-                    <li class="nav-link" data-view="experiences" onclick="switchView('experiences')"><span class="nav-icon" aria-hidden="true">▢</span><span>Experiences</span></li>
-                    <li class="nav-link" data-view="projects" onclick="switchView('projects')"><span class="nav-icon" aria-hidden="true">□</span><span>Projects</span></li>
-                    <li class="nav-link" data-view="resources" onclick="switchView('resources')"><span class="nav-icon" aria-hidden="true">◫</span><span>Resources</span></li>
-                    <li class="nav-link" data-view="contact" onclick="switchView('contact')"><span class="nav-icon" aria-hidden="true">✉</span><span>Contact</span></li>
-                </ul>
-            </nav>
-
-            <div class="sidebar-watermark" aria-hidden="true">
-                <img src="assets/img/logo-mark.svg" alt="">
-            </div>
-
-            <div class="meta-block">
-                <div class="availability-line">
-                    <span class="status-dot"></span>
+<div class="wrapper">
+<aside>
+<button aria-label="Mohammed Jamai — go to Landing" class="brand-block brand-link" onclick="switchView('landing')">
+<span class="logo-btn"><img alt="Mohammed Jamai logo" class="logo" height="44" src="assets/img/mj-logo.png" width="44"/></span>
+<span class="full-name">Mohammed Jamai</span>
+</button>
+<nav aria-label="Main">
+<ul class="nav-list"><li class="nav-link" data-view="profile" onclick="switchView('profile')"><span aria-hidden="true" class="nav-icon">◉</span><span>Profile</span></li><li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')"><span aria-hidden="true" class="nav-icon">▤</span><span>Education</span></li><li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')"><span aria-hidden="true" class="nav-icon">✓</span><span>Certifications</span></li><li class="nav-link" data-view="experiences" onclick="switchView('experiences')"><span aria-hidden="true" class="nav-icon">▱</span><span>Experiences</span></li><li class="nav-link" data-view="projects" onclick="switchView('projects')"><span aria-hidden="true" class="nav-icon">□</span><span>Projects</span></li><li class="nav-link" data-view="resources" onclick="switchView('resources')"><span aria-hidden="true" class="nav-icon">◫</span><span>Resources</span></li><li class="nav-link" data-view="contact" onclick="switchView('contact')"><span aria-hidden="true" class="nav-icon">✉</span><span>Contact</span></li></ul>
+</nav>
+<div aria-hidden="true" class="sidebar-watermark">
+<img alt="" src="assets/img/mj-logo.png"/>
+</div>
+<div class="meta-block">
+<div class="availability-line">
+<span class="status-dot"></span>
                     Available for new projects
                 </div>
-            </div>
-        </aside>
+<div class="sidebar-footer-separator"></div><a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
+</aside>
+<header class="mobile-header" id="mobile-header">
+<button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="Mohammed Jamai logo" class="logo" height="38" src="assets/img/mj-logo.png" width="38"/>
+</button>
+<button aria-controls="mobile-nav" aria-expanded="false" class="menu-toggle" id="menu-toggle">Menu</button>
+<ul class="mobile-nav" id="mobile-nav"><li class="nav-link" data-view="profile" onclick="switchView('profile')">Profile</li><li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')">Education</li><li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')">Certifications</li><li class="nav-link" data-view="experiences" onclick="switchView('experiences')">Experiences</li><li class="nav-link" data-view="projects" onclick="switchView('projects')">Projects</li><li class="nav-link" data-view="resources" onclick="switchView('resources')">Resources</li><li class="nav-link" data-view="contact" onclick="switchView('contact')">Contact</li></ul>
+</header>
+<main><section class="view-section active-view" id="view-landing">
+<div class="landing-wrap">
+<div class="landing-card">
+<div class="landing-mark"><img alt="Mohammed Jamai logo" src="assets/img/mj-logo.png"/></div>
+<div class="profile-name">Mohammed Jamai</div>
+<h1 class="landing-title">Mechatronics Systems Engineer</h1>
+<p class="landing-subtitle">Powertrain · Embedded Control &amp; Development · Model-Based Design</p>
+<p class="landing-intro">Engineering embedded and electrified systems from model to validation.</p>
+<button class="landing-cta" onclick="switchView('profile')">Discover Profile <span aria-hidden="true">→</span></button>
+</div>
+</div>
+</section>
+<!-- ============================== PROFILE ============================== -->
+<section class="view-section" id="view-profile"><div class="profile-page-heading"><span class="section-label">Profile</span></div>
+<!-- Business card -->
+<div class="profile-card">
+<div class="profile-card-top">
+<div class="profile-photo">
+<img alt="Portrait of Mohammed Jamai" height="600" src="assets/img/profile.jpg" width="600"/>
+</div>
+<div aria-hidden="true" class="engineering-signal"><span></span><span></span><span></span></div>
+<div class="profile-identity">
+<div class="profile-name">Mohammed Jamai</div>
+<h1 class="profile-title">Mechatronics Systems Engineer</h1>
+<p class="profile-subtitle">Powertrain, Embedded Control &amp; Model-Based Design</p>
+<p class="profile-sectors">Automotive &amp; e-mobility, Aerospace, Energy storage</p>
+<div class="profile-meta profile-meta-modern">
+<span>Toulouse, France</span>
+<span class="availability-line"><span class="status-dot"></span> Available for new projects</span>
+</div><div class="profile-languages-top"><span class="language-chip">FR · Fluent</span><span class="language-chip">EN · B2–C1</span><span class="language-chip">AR · Native</span></div>
+</div>
+</div>
+<p class="profile-bio">I design, model and validate embedded systems for electric and hybrid powertrains, from Simulink models and MiL/SiL/HiL test loops to safety-critical ECU software. I have worked with automotive OEMs, hydrogen bus makers and energy companies.</p>
+<!-- Replace the GitHub and Jupyter URLs below with your own profiles -->
+<div class="profile-links">
+<a class="profile-btn" href="https://github.com/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/github.svg" width="18"/><span>GitHub</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
+<a class="profile-btn" href="https://jupyter.org/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/jupyter.svg" width="18"/><span>Jupyter</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
+<a class="profile-btn" href="https://www.linkedin.com/in/mohammed-jamai" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/svgs/brands/linkedin.svg" width="18"/><span>LinkedIn</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
+</div>
+</div>
+<span class="section-label">Core Capabilities</span>
+<div class="capability-grid"><div class="capability"><div class="capability-title">Powertrain Systems</div><p class="capability-desc">Electric and hybrid powertrains, power electronics, machines and energy systems.</p></div><div class="capability"><div class="capability-title">Embedded Control</div><p class="capability-desc">Embedded C/C++, diagnostics, CAN and safety-oriented ECU development.</p></div><div class="capability"><div class="capability-title">Model-Based Design</div><p class="capability-desc">MATLAB/Simulink, plant and controller modeling, MiL and SiL workflows.</p></div><div class="capability"><div class="capability-title">Validation &amp; Safety</div><p class="capability-desc">HiL verification, requirements traceability, ISO 26262 and FMEA practices.</p></div></div>
 
-        <header class="mobile-header" id="mobile-header">
-            <button class="logo-btn mobile-brand" onclick="switchView('profile')" aria-label="Go to Profile"><img class="logo" src="assets/img/logo-mark.svg" alt="" width="38" height="38">
-            </button>
-            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-            <ul class="mobile-nav" id="mobile-nav">
-                <li class="nav-link" data-view="profile" onclick="switchView('profile')">Profile</li>
-                    <li class="nav-link" data-view="experiences" onclick="switchView('experiences')">Experiences</li>
-                <li class="nav-link" data-view="projects" onclick="switchView('projects')">Projects</li>
-                <li class="nav-link" data-view="resources" onclick="switchView('resources')">Resources</li>
-                <li class="nav-link" data-view="contact" onclick="switchView('contact')">Contact</li>
-            </ul>
-        </header>
 
-        <main>
-            <!-- ============================== PROFILE ============================== -->
-            <section id="view-profile" class="view-section active-view">
 
-                <!-- Business card -->
-                <div class="profile-card">
-                    <div class="profile-card-top">
-                        <div class="profile-photo">
-                            <img src="assets/img/profile.jpg" alt="Portrait of Mohammed Jamai" width="600" height="600">
-                        </div>
-                        <div class="engineering-signal" aria-hidden="true"><span></span><span></span><span></span></div>
-                        <div class="profile-identity">
-                            <div class="profile-name">Mohammed Jamai</div>
-                            <h1 class="profile-title">Mechatronics Systems Engineer</h1>
-                            <p class="profile-subtitle">Powertrain, Embedded Control &amp; Model-Based Design</p>
-                            <p class="profile-sectors">Automotive &amp; e-mobility, Aerospace, Energy storage</p>
-                            <div class="profile-meta profile-meta-modern">
-                                <span>Toulouse, France</span>
-                                <span class="availability-line"><span class="status-dot"></span> Available for new projects</span>
-                            </div>
-                        </div>
-                    </div>
+<span class="section-label" id="education">Education</span>
+<div class="catalogue-list">
+<div class="edu-item">
+<div class="edu-date">2019–2022</div>
+<div class="edu-details">
+<div class="edu-degree">ENSEEIHT, Toulouse INP</div>
+<div class="edu-school">Engineering degree, Electrical and Electronics Engineering (Electrodynamics and Advanced Mechatronics)</div>
+</div>
+</div>
+<div class="edu-item">
+<div class="edu-date">2021–2022</div>
+<div class="edu-details">
+<div class="edu-degree">Université Toulouse III Paul Sabatier</div>
+<div class="edu-school">Double degree, M2, Energy, Materials and Sustainable Development</div>
+</div>
+</div>
+<div class="edu-item">
+<div class="edu-date">2018–2019</div>
+<div class="edu-details">
+<div class="edu-degree">INSSET, Université de Picardie Jules Verne</div>
+<div class="edu-school">Licence (bachelor's), Embedded Systems</div>
+</div>
+</div>
+<div class="edu-item">
+<div class="edu-date">2016–2018</div>
+<div class="edu-details">
+<div class="edu-degree">École Supérieure de Technologie, Oujda</div>
+<div class="edu-school">Technical degree (DUT), Electronics and Industrial Computing</div>
+</div>
+</div>
+</div>
+<span class="section-label" id="certifications">Certifications</span>
+<div class="cert-grid">
+<div class="cert-item">
+<div class="cert-name">Electrical work authorization (level B1)</div>
+<div class="cert-issuer">Issuer · Year</div>
+</div>
+<div class="cert-item">
+<div class="cert-name">Programming in C++</div>
+<div class="cert-issuer">OpenClassrooms · Year</div>
+</div>
+<div class="cert-item">
+<div class="cert-name">Analyzing project risk</div>
+<div class="cert-issuer">OpenClassrooms · Year</div>
+</div>
+<div class="cert-item">
+<div class="cert-name">Linguaskill Business (B2–C1)</div>
+<div class="cert-issuer">Cambridge English · Year</div>
+</div>
 
-                    <p class="profile-bio">I design, model and validate embedded systems for electric and hybrid powertrains, from Simulink models and MiL/SiL/HiL test loops to safety-critical ECU software. I have worked with automotive OEMs, hydrogen bus makers and energy companies.</p>
 
-                    <!-- Replace the GitHub and Jupyter URLs below with your own profiles -->
-                    <div class="profile-links">
-                        <a href="https://github.com/" class="profile-btn" target="_blank" rel="noopener"><img class="brand-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/github.svg" alt="" width="18" height="18" loading="lazy" onerror="this.remove()"><span>GitHub</span><span class="profile-btn-arrow" aria-hidden="true">↗</span></a>
-                        <a href="https://jupyter.org/" class="profile-btn" target="_blank" rel="noopener"><img class="brand-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/jupyter.svg" alt="" width="18" height="18" loading="lazy" onerror="this.remove()"><span>Jupyter</span><span class="profile-btn-arrow" aria-hidden="true">↗</span></a>
-                        <a href="https://www.linkedin.com/in/mohammed-jamai" class="profile-btn" target="_blank" rel="noopener"><img class="brand-icon" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/svgs/brands/linkedin.svg" alt="" width="18" height="18" loading="lazy" onerror="this.remove()"><span>LinkedIn</span><span class="profile-btn-arrow" aria-hidden="true">↗</span></a>
-                    </div>
-                </div>
+</div>
 
-                <span class="section-label">Core Capabilities</span>
-                <div class="capability-grid">
-                    <div class="capability">
-                        <div class="capability-index">01</div>
-                        <div class="capability-title">Digital Twins</div>
-                        <p class="capability-desc">High-fidelity Simulink models of electrified systems and architectures.</p>
-                    </div>
-                    <div class="capability">
-                        <div class="capability-index">02</div>
-                        <div class="capability-title">MBD Validation</div>
-                        <p class="capability-desc">End-to-end verification loops across MiL, SiL and HiL.</p>
-                    </div>
-                    <div class="capability">
-                        <div class="capability-index">03</div>
-                        <div class="capability-title">Powertrain &amp; Energy</div>
-                        <p class="capability-desc">Power converters, electric machines and battery systems.</p>
-                    </div>
-                    <div class="capability">
-                        <div class="capability-index">04</div>
-                        <div class="capability-title">Embedded Software</div>
-                        <p class="capability-desc">Safety-critical C/C++ with diagnostics, ISO 26262 and FMEA.</p>
-                    </div>
-                </div>
 
-                <span class="section-label">Key Skills</span>
-                <div class="key-skills">
-                    <div class="key-skill">
-                        <div class="key-skill-title">Simulink Modeling</div>
-                        <div class="key-skill-tools">MATLAB · Simulink · PLECS</div>
-                    </div>
-                    <div class="key-skill">
-                        <div class="key-skill-title">HiL Testing</div>
-                        <div class="key-skill-tools">dSPACE · INCA · MiL/SiL</div>
-                    </div>
-                    <div class="key-skill">
-                        <div class="key-skill-title">Embedded C/C++</div>
-                        <div class="key-skill-tools">C/C++ · CAN bus · Python</div>
-                    </div>
-                    <div class="key-skill">
-                        <div class="key-skill-title">Functional Safety</div>
-                        <div class="key-skill-tools">ISO 26262 · FMEA · Polarion</div>
-                    </div>
-                </div>
-                <button class="navigation-hint key-skills-more" onclick="switchView('projects')">All technical skills on Projects. →</button>
-
-                <span class="section-label">Education</span>
-                <div class="catalogue-list">
-                    <div class="edu-item">
-                        <div class="edu-date">2019–2022</div>
-                        <div class="edu-details">
-                            <div class="edu-degree">ENSEEIHT, Toulouse INP</div>
-                            <div class="edu-school">Engineering degree, Electrical and Electronics Engineering (Electrodynamics and Advanced Mechatronics)</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-date">2021–2022</div>
-                        <div class="edu-details">
-                            <div class="edu-degree">Université Toulouse III Paul Sabatier</div>
-                            <div class="edu-school">Double degree, M2, Energy, Materials and Sustainable Development</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-date">2018–2019</div>
-                        <div class="edu-details">
-                            <div class="edu-degree">INSSET, Université de Picardie Jules Verne</div>
-                            <div class="edu-school">Licence (bachelor's), Embedded Systems</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-date">2016–2018</div>
-                        <div class="edu-details">
-                            <div class="edu-degree">École Supérieure de Technologie, Oujda</div>
-                            <div class="edu-school">Technical degree (DUT), Electronics and Industrial Computing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="section-label">Certifications</span>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <div class="cert-name">Electrical work authorization (level B1)</div>
-                        <div class="cert-issuer">Issuer · Year</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Programming in C++</div>
-                        <div class="cert-issuer">OpenClassrooms · Year</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Analyzing project risk</div>
-                        <div class="cert-issuer">OpenClassrooms · Year</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Linguaskill Business (B2–C1)</div>
-                        <div class="cert-issuer">Cambridge English · Year</div>
-                    </div>
-                    <div class="cert-item cert-placeholder">
-                        <div class="cert-name">Certification name</div>
-                        <div class="cert-issuer">Issuer · Year</div>
-                    </div>
-                    <div class="cert-item cert-placeholder">
-                        <div class="cert-name">Certification name</div>
-                        <div class="cert-issuer">Issuer · Year</div>
-                    </div>
-                </div>
-
-                <span class="section-label">Languages</span>
-                <div class="spec-sheet">
-                    <div class="spec-row">
-                        <div class="spec-label">French</div>
-                        <div class="spec-value">Fluent</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">English</div>
-                        <div class="spec-value">B2–C1 (Linguaskill Business)</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Arabic</div>
-                        <div class="spec-value">Native</div>
-                    </div>
-                </div>
-
-                <button class="navigation-hint" onclick="switchView('experiences')">Professional and project experience on Experiences. →</button>
-            </section>
-
-            <!-- ============================ EXPERIENCES ============================ -->
-            <section id="view-experiences" class="view-section">
-                <span class="section-label">Professional Experience</span>
-                <div class="catalogue-list">
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">01</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">Vitesco Technologies (Schaeffler Group)</div>
-                            <div class="catalogue-meta">Oct 2023 – Sep 2025 · Model-Based Design Engineer (Toulouse, France)</div>
-                            <div class="catalogue-desc">Modeled and validated embedded components for electric and hybrid powertrains using MiL, SiL and HiL loops for Renault, Mercedes-Benz and Ford. Executed rigorous physical domain parameters tracking across the HV Box 2.0/3.0 platform development sequences and engineered Ford's 48V DC-DC converter simulation models.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>MATLAB/Simulink</li><li>PLECS</li><li>dSPACE SCALEXIO</li><li>INCA</li><li>FPGA</li><li>MiL / SiL / HiL</li><li>PFC &amp; DC/DC</li><li>EMC/EMI</li><li>Git</li><li>Jira</li><li>V-model</li>
-                        </ul>
-                    </div>
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">02</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">Safra</div>
-                            <div class="catalogue-meta">Jul 2022 – Sep 2023 · Embedded Software Engineer (Albi, France)</div>
-                            <div class="catalogue-desc">Developed ECU safety-critical software functions for driving, propulsion, thermal comfort, and onboard systems managing HYCITY and BUSINOVA hydrogen fuel cell buses. Managed precise upstream requirements traceability infrastructures in Polarion to ensure complete alignment with ISO 26262 functional safety conditions.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>C/C++</li><li>CAN bus</li><li>Cygwin</li><li>Embedded Diagnostics</li><li>ISO 26262</li><li>FMEA</li><li>Polarion</li><li>Confluence</li><li>Scrum/Kanban</li>
-                        </ul>
-                    </div>
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">03</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">Artelia Group</div>
-                            <div class="catalogue-meta">Feb 2022 – Jun 2022 · Battery Modeling Engineer (Lyon, France)</div>
-                            <div class="catalogue-desc">Modeled high-fidelity lithium-ion and redox-flow stationary battery system characteristics in MATLAB/Simulink for TotalEnergies workflows. Built techno-economic CAPEX/OPEX calculation algorithms and packaged code bases into small custom Windows tools using Python.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>MATLAB/Simulink</li><li>Python</li><li>Battery aging &amp; SoH</li><li>CAPEX/OPEX</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <span class="section-label">Internship & Academic Projects</span>
-                <div class="catalogue-list">
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">04</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">Kythera</div>
-                            <div class="catalogue-meta">Feb 2022 · Mechatronics Engineer Internship (Colomiers, France)</div>
-                            <div class="catalogue-desc">Designed, configured, and implemented an operational modular servomotor validation test bench. Handled industrial sensor instrumentation tasks, complex structural mechanical integration steps, and low-level custom PCB architectural design tracks.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>KiCad</li><li>LabVIEW</li><li>PCB design</li><li>Instrumentation</li>
-                        </ul>
-                    </div>
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">05</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">Safran & ArianeGroup</div>
-                            <div class="catalogue-meta">Sep 2021 – Feb 2022 · Electric Turboprop Design Project (Toulouse, France)</div>
-                            <div class="catalogue-desc">Contributed directly to the complex multi-physics sizing framework simulations targeting an electric turboprop design intended to balance Pratt & Whitney PT6 performance milestones.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>Ansys Maxwell</li><li>MATLAB</li><li>SysML</li>
-                        </ul>
-                    </div>
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">06</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">CNRS</div>
-                            <div class="catalogue-meta">Mar 2021 – Jul 2021 · Materials Testing and Instrumentation Project (France)</div>
-                            <div class="catalogue-desc">Designed custom experimental laboratory setups to safely control, capture, and fully characterize advanced nickel-titanium shape-memory alloy structures under mechanical loads.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>PCB design</li><li>Data acquisition</li><li>LabVIEW</li>
-                        </ul>
-                    </div>
-                    <div class="catalogue-item">
-                        <div class="catalogue-index">07</div>
-                        <div class="catalogue-body">
-                            <div class="company-header">OCP Group</div>
-                            <div class="catalogue-meta">Apr 2017 – Jun 2017 · Electronic Technician Internship (Youssoufia, Morocco)</div>
-                            <div class="catalogue-desc">Managed electrical maintenance routines, safety analysis sequences, and instrument monitoring workflows right inside an industrial phosphate calcination plant workspace.</div>
-                        </div>
-                        <ul class="skill-tags">
-                            <li>Electrical maintenance</li><li>Safety analysis</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="resume-download">
-                    <div>
-                        <div class="resume-download-title">Download Resume</div>
-                        <div class="resume-download-desc">PDF version, available in three languages.</div>
-                    </div>
-                    <div class="resume-download-actions">
-                        <a href="assets/resume/Mohammed_Jamai_Resume_EN.pdf" class="download-btn" download>
-                            <span class="lang-code">EN</span><span class="lang-name">English</span>
-                        </a>
-                        <a href="assets/resume/Mohammed_Jamai_Resume_FR.pdf" class="download-btn" download>
-                            <span class="lang-code">FR</span><span class="lang-name">Français</span>
-                        </a>
-                        <a href="assets/resume/Mohammed_Jamai_Resume_AR.pdf" class="download-btn" download>
-                            <span class="lang-code">AR</span><span class="lang-name" lang="ar">العربية</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================== PROJECTS ============================== -->
-            <!-- To use a real image: replace the text inside .project-image-slot with
+<button class="navigation-hint" onclick="switchView('experiences')">Professional and project experience on Experiences. →</button>
+</section>
+<!-- ============================ EXPERIENCES ============================ -->
+<section class="view-section" id="view-experiences">
+<span class="section-label">Professional Experience</span>
+<div class="catalogue-list">
+<div class="catalogue-item">
+<div class="catalogue-index">01</div>
+<div class="catalogue-body">
+<div class="company-header">Vitesco Technologies (Schaeffler Group)</div>
+<div class="catalogue-meta">Oct 2023 – Sep 2025 · Model-Based Design Engineer (Toulouse, France)</div>
+<div class="catalogue-desc">Modeled and validated embedded components for electric and hybrid powertrains using MiL, SiL and HiL loops for Renault, Mercedes-Benz and Ford. Executed rigorous physical domain parameters tracking across the HV Box 2.0/3.0 platform development sequences and engineered Ford's 48V DC-DC converter simulation models.</div>
+</div>
+<ul class="skill-tags">
+<li>MATLAB/Simulink</li><li>PLECS</li><li>dSPACE SCALEXIO</li><li>INCA</li><li>FPGA</li><li>MiL / SiL / HiL</li><li>PFC &amp; DC/DC</li><li>EMC/EMI</li><li>Git</li><li>Jira</li><li>V-model</li>
+</ul>
+</div>
+<div class="catalogue-item">
+<div class="catalogue-index">02</div>
+<div class="catalogue-body">
+<div class="company-header">Safra</div>
+<div class="catalogue-meta">Jul 2022 – Sep 2023 · Embedded Software Engineer (Albi, France)</div>
+<div class="catalogue-desc">Developed ECU safety-critical software functions for driving, propulsion, thermal comfort, and onboard systems managing HYCITY and BUSINOVA hydrogen fuel cell buses. Managed precise upstream requirements traceability infrastructures in Polarion to ensure complete alignment with ISO 26262 functional safety conditions.</div>
+</div>
+<ul class="skill-tags">
+<li>C/C++</li><li>CAN bus</li><li>Cygwin</li><li>Embedded Diagnostics</li><li>ISO 26262</li><li>FMEA</li><li>Polarion</li><li>Confluence</li><li>Scrum/Kanban</li>
+</ul>
+</div>
+<div class="catalogue-item">
+<div class="catalogue-index">03</div>
+<div class="catalogue-body">
+<div class="company-header">Artelia Group</div>
+<div class="catalogue-meta">Feb 2022 – Jun 2022 · Battery Modeling Engineer (Lyon, France)</div>
+<div class="catalogue-desc">Modeled high-fidelity lithium-ion and redox-flow stationary battery system characteristics in MATLAB/Simulink for TotalEnergies workflows. Built techno-economic CAPEX/OPEX calculation algorithms and packaged code bases into small custom Windows tools using Python.</div>
+</div>
+<ul class="skill-tags">
+<li>MATLAB/Simulink</li><li>Python</li><li>Battery aging &amp; SoH</li><li>CAPEX/OPEX</li>
+</ul>
+</div>
+</div>
+<span class="section-label">Internship &amp; Academic Projects</span>
+<div class="catalogue-list">
+<div class="catalogue-item">
+<div class="catalogue-index">04</div>
+<div class="catalogue-body">
+<div class="company-header">Kythera</div>
+<div class="catalogue-meta">Feb 2022 · Mechatronics Engineer Internship (Colomiers, France)</div>
+<div class="catalogue-desc">Designed, configured, and implemented an operational modular servomotor validation test bench. Handled industrial sensor instrumentation tasks, complex structural mechanical integration steps, and low-level custom PCB architectural design tracks.</div>
+</div>
+<ul class="skill-tags">
+<li>KiCad</li><li>LabVIEW</li><li>PCB design</li><li>Instrumentation</li>
+</ul>
+</div>
+<div class="catalogue-item">
+<div class="catalogue-index">05</div>
+<div class="catalogue-body">
+<div class="company-header">Safran &amp; ArianeGroup</div>
+<div class="catalogue-meta">Sep 2021 – Feb 2022 · Electric Turboprop Design Project (Toulouse, France)</div>
+<div class="catalogue-desc">Contributed directly to the complex multi-physics sizing framework simulations targeting an electric turboprop design intended to balance Pratt &amp; Whitney PT6 performance milestones.</div>
+</div>
+<ul class="skill-tags">
+<li>Ansys Maxwell</li><li>MATLAB</li><li>SysML</li>
+</ul>
+</div>
+<div class="catalogue-item">
+<div class="catalogue-index">06</div>
+<div class="catalogue-body">
+<div class="company-header">CNRS</div>
+<div class="catalogue-meta">Mar 2021 – Jul 2021 · Materials Testing and Instrumentation Project (France)</div>
+<div class="catalogue-desc">Designed custom experimental laboratory setups to safely control, capture, and fully characterize advanced nickel-titanium shape-memory alloy structures under mechanical loads.</div>
+</div>
+<ul class="skill-tags">
+<li>PCB design</li><li>Data acquisition</li><li>LabVIEW</li>
+</ul>
+</div>
+<div class="catalogue-item">
+<div class="catalogue-index">07</div>
+<div class="catalogue-body">
+<div class="company-header">OCP Group</div>
+<div class="catalogue-meta">Apr 2017 – Jun 2017 · Electronic Technician Internship (Youssoufia, Morocco)</div>
+<div class="catalogue-desc">Managed electrical maintenance routines, safety analysis sequences, and instrument monitoring workflows right inside an industrial phosphate calcination plant workspace.</div>
+</div>
+<ul class="skill-tags">
+<li>Electrical maintenance</li><li>Safety analysis</li>
+</ul>
+</div>
+</div>
+<div class="resume-download">
+<div>
+<div class="resume-download-title">Download Resume</div>
+<div class="resume-download-desc">PDF version, available in three languages.</div>
+</div>
+<div class="resume-download-actions">
+<a class="download-btn" download="" href="assets/resume/Mohammed_Jamai_Resume_EN.pdf">
+<span class="lang-code">EN</span><span class="lang-name">English</span>
+</a>
+<a class="download-btn" download="" href="assets/resume/Mohammed_Jamai_Resume_FR.pdf">
+<span class="lang-code">FR</span><span class="lang-name">Français</span>
+</a>
+<a class="download-btn" download="" href="assets/resume/Mohammed_Jamai_Resume_AR.pdf">
+<span class="lang-code">AR</span><span class="lang-name" lang="ar">العربية</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================== PROJECTS ============================== -->
+<!-- To use a real image: replace the text inside .project-image-slot with
                  <img src="assets/img/projects/your-image.jpg" alt="..."> -->
-            <section id="view-projects" class="view-section">
-                <span class="section-label">Projects</span>
-                <div class="project-list">
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">01</span><h2 class="project-title">CO₂ Emissions Calculation</h2></div>
-                            <p class="project-description">Tool to calculate and estimate CO₂ emissions from energy consumption and activity data, using standard emission factors, to compare scenarios and support lower-carbon decisions.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Energy &amp; sustainability</dd></div>
-                                <div><dt>Tools</dt><dd>Python</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">02</span><h2 class="project-title">Brushless Motor Control</h2></div>
-                            <p class="project-description">Development of the control system of a brushless motor: commutation logic and speed and current control loops, designed and tuned in simulation before implementation on a microcontroller.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Motor control</dd></div>
-                                <div><dt>Tools</dt><dd>MATLAB/Simulink, Embedded C</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">03</span><h2 class="project-title">20 A Renault Charger</h2></div>
-                            <p class="project-description">Development and design of a 20 A charger for Renault: power stage architecture (PFC and DC/DC conversion), simulation models and validation of the charger behavior.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Power electronics</dd></div>
-                                <div><dt>Tools</dt><dd>MATLAB/Simulink, PLECS</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">04</span><h2 class="project-title">PMSM FEM Analysis</h2></div>
-                            <p class="project-description">Finite element analysis of a permanent magnet synchronous machine (PMSM): magnetic flux distribution, back-EMF, torque and cogging torque, with post-processing of the results in MATLAB.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Electrical machines</dd></div>
-                                <div><dt>Tools</dt><dd>ANSYS, FEMM, MATLAB</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">05</span><h2 class="project-title">MBD Model</h2></div>
-                            <p class="project-description">Model-Based Design workflow: plant and controller models built in Simulink, then verified through MiL and SiL tests against the requirements.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Model-Based Design</dd></div>
-                                <div><dt>Tools</dt><dd>MATLAB/Simulink, MiL / SiL</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-row">
-                        <div class="project-image-slot">[ Project image ]</div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-index">06</span><h2 class="project-title">Capella / MBSE</h2></div>
-                            <p class="project-description">Model-Based Systems Engineering with Capella and the Arcadia method: operational analysis, then system, logical and physical architectures, with traceability from needs to components.</p>
-                            <dl class="project-facts">
-                                <div><dt>Domain</dt><dd>Systems engineering</dd></div>
-                                <div><dt>Tools</dt><dd>Capella, Arcadia</dd></div>
-                                <div><dt>Year</dt><dd>—</dd></div>
-                            </dl>
-                            <div class="project-links">
-                                <a href="#" class="project-action" onclick="return false;">See Project →</a>
-                                <a href="#" class="project-action" onclick="return false;">Code →</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <span class="section-label section-label-spaced">Technical Skills</span>
-                <div class="spec-sheet">
-                    <div class="spec-row">
-                        <div class="spec-label">Modeling &amp; Simulation</div>
-                        <ul class="spec-value skill-tags">
-                            <li>MATLAB</li><li>Simulink</li><li>PLECS</li><li>Ansys Maxwell</li><li>FEMM</li><li>SysML</li><li>Capella</li>
-                        </ul>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Validation &amp; Test</div>
-                        <ul class="spec-value skill-tags">
-                            <li>MiL / SiL / HiL</li><li>dSPACE SCALEXIO</li><li>INCA</li><li>LabVIEW</li>
-                        </ul>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Embedded &amp; Programming</div>
-                        <ul class="spec-value skill-tags">
-                            <li>C/C++</li><li>Python</li><li>VHDL</li><li>HLS</li><li>CAN bus</li><li>Cygwin</li><li>Git</li>
-                        </ul>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Electronics &amp; Hardware</div>
-                        <ul class="spec-value skill-tags">
-                            <li>Power electronics (PFC, DC/DC)</li><li>FPGA (Quartus)</li><li>PCB design (KiCad)</li><li>PSpice</li><li>EMC/EMI</li>
-                        </ul>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Methods &amp; Standards</div>
-                        <ul class="spec-value skill-tags">
-                            <li>ISO 26262</li><li>FMEA</li><li>V-model</li><li>Polarion</li><li>Jira</li><li>Confluence</li><li>Scrum/Kanban</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ============================== RESOURCES ============================== -->
-            <!-- Content comes from js/resources.js -->
-            <section id="view-resources" class="view-section">
-                <span class="section-label">Resources</span>
-                <p class="section-intro">What I write, what I share and what I recommend.</p>
-                <div class="resource-jump" id="resource-jump"></div>
-                <div id="resource-blocks"></div>
-            </section>
-
-            <!-- ============================== CONTACT ============================== -->
-            <section id="view-contact" class="view-section">
-                <span class="section-label">Enquiries</span>
-                <h2 class="contact-large-header">Contact</h2>
-                <p class="contact-intro">Tell me about your system, your timeline, and where you're stuck. I reply within two working days.</p>
-
-                <div class="spec-sheet">
-                    <div class="spec-row">
-                        <div class="spec-label">Email</div>
-                        <div class="spec-value"><a href="mailto:jamai-mohammed@hotmail.com">jamai-mohammed@hotmail.com</a></div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Location</div>
-                        <div class="spec-value">Toulouse, France</div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Network</div>
-                        <div class="spec-value"><a class="icon-link" href="https://www.linkedin.com/in/mohammed-jamai" target="_blank" rel="noopener"><img class="brand-icon" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/svgs/brands/linkedin.svg" alt="" width="18" height="18" loading="lazy" onerror="this.remove()">LinkedIn Profile</a></div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-label">Resume</div>
-                        <div class="spec-value contact-resume-links">
-                            <a href="assets/resume/Mohammed_Jamai_Resume_EN.pdf" download>English</a>
-                            <a href="assets/resume/Mohammed_Jamai_Resume_FR.pdf" download>Français</a>
-                            <a href="assets/resume/Mohammed_Jamai_Resume_AR.pdf" download lang="ar">العربية</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="mailto:jamai-mohammed@hotmail.com" class="action-mailto">Write me an email</a>
-            </section>
-        </main>
-    </div>
-
-    <script src="js/resources.js"></script>
-    <script src="js/main.js"></script>
+<section class="view-section" id="view-projects">
+<span class="section-label">Projects</span>
+<div class="project-list">
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">01</span><h2 class="project-title">CO₂ Emissions Calculation</h2></div>
+<p class="project-description">Tool to calculate and estimate CO₂ emissions from energy consumption and activity data, using standard emission factors, to compare scenarios and support lower-carbon decisions.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Energy &amp; sustainability</dd></div>
+<div><dt>Tools</dt><dd>Python</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">02</span><h2 class="project-title">Brushless Motor Control</h2></div>
+<p class="project-description">Development of the control system of a brushless motor: commutation logic and speed and current control loops, designed and tuned in simulation before implementation on a microcontroller.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Motor control</dd></div>
+<div><dt>Tools</dt><dd>MATLAB/Simulink, Embedded C</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">03</span><h2 class="project-title">20 A Renault Charger</h2></div>
+<p class="project-description">Development and design of a 20 A charger for Renault: power stage architecture (PFC and DC/DC conversion), simulation models and validation of the charger behavior.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Power electronics</dd></div>
+<div><dt>Tools</dt><dd>MATLAB/Simulink, PLECS</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">04</span><h2 class="project-title">PMSM FEM Analysis</h2></div>
+<p class="project-description">Finite element analysis of a permanent magnet synchronous machine (PMSM): magnetic flux distribution, back-EMF, torque and cogging torque, with post-processing of the results in MATLAB.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Electrical machines</dd></div>
+<div><dt>Tools</dt><dd>ANSYS, FEMM, MATLAB</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">05</span><h2 class="project-title">MBD Model</h2></div>
+<p class="project-description">Model-Based Design workflow: plant and controller models built in Simulink, then verified through MiL and SiL tests against the requirements.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Model-Based Design</dd></div>
+<div><dt>Tools</dt><dd>MATLAB/Simulink, MiL / SiL</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+<article class="project-row">
+<div class="project-image-slot">[ Project image ]</div>
+<div class="project-body">
+<div class="project-head"><span class="project-index">06</span><h2 class="project-title">Capella / MBSE</h2></div>
+<p class="project-description">Model-Based Systems Engineering with Capella and the Arcadia method: operational analysis, then system, logical and physical architectures, with traceability from needs to components.</p>
+<dl class="project-facts">
+<div><dt>Domain</dt><dd>Systems engineering</dd></div>
+<div><dt>Tools</dt><dd>Capella, Arcadia</dd></div>
+<div><dt>Year</dt><dd>—</dd></div>
+</dl>
+<div class="project-links">
+<a class="project-action" href="#" onclick="return false;">See Project →</a>
+<a class="project-action" href="#" onclick="return false;">Code →</a>
+</div>
+</div>
+</article>
+</div>
+<span class="section-label section-label-spaced">Technical Skills</span>
+                <p class="section-intro">Complete technical stack used across the projects above.</p>
+<div class="spec-sheet">
+<div class="spec-row">
+<div class="spec-label">Modeling &amp; Simulation</div>
+<ul class="spec-value skill-tags">
+<li>MATLAB</li><li>Simulink</li><li>PLECS</li><li>Ansys Maxwell</li><li>FEMM</li><li>SysML</li><li>Capella</li>
+</ul>
+</div>
+<div class="spec-row">
+<div class="spec-label">Validation &amp; Test</div>
+<ul class="spec-value skill-tags">
+<li>MiL / SiL / HiL</li><li>dSPACE SCALEXIO</li><li>INCA</li><li>LabVIEW</li>
+</ul>
+</div>
+<div class="spec-row">
+<div class="spec-label">Embedded &amp; Programming</div>
+<ul class="spec-value skill-tags">
+<li>C/C++</li><li>Python</li><li>VHDL</li><li>HLS</li><li>CAN bus</li><li>Cygwin</li><li>Git</li>
+</ul>
+</div>
+<div class="spec-row">
+<div class="spec-label">Electronics &amp; Hardware</div>
+<ul class="spec-value skill-tags">
+<li>Power electronics (PFC, DC/DC)</li><li>FPGA (Quartus)</li><li>PCB design (KiCad)</li><li>PSpice</li><li>EMC/EMI</li>
+</ul>
+</div>
+<div class="spec-row">
+<div class="spec-label">Methods &amp; Standards</div>
+<ul class="spec-value skill-tags">
+<li>ISO 26262</li><li>FMEA</li><li>V-model</li><li>Polarion</li><li>Jira</li><li>Confluence</li><li>Scrum/Kanban</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- ============================== RESOURCES ============================== -->
+<!-- Content comes from js/resources.js -->
+<section class="view-section" id="view-resources">
+<span class="section-label">Resources</span>
+<p class="section-intro">What I write, what I share and what I recommend.</p>
+<div class="resource-jump" id="resource-jump"></div>
+<div id="resource-blocks"></div>
+</section>
+<!-- ============================== CONTACT ============================== -->
+<section class="view-section" id="view-contact">
+<span class="section-label">Enquiries</span>
+<h2 class="contact-large-header">Contact</h2>
+<p class="contact-intro">Tell me about your system, your timeline, and where you're stuck. I reply within two working days.</p>
+<div class="spec-sheet">
+<div class="spec-row">
+<div class="spec-label">Email</div>
+<div class="spec-value"><a href="mailto:jamai-mohammed@hotmail.com">jamai-mohammed@hotmail.com</a></div>
+</div>
+<div class="spec-row">
+<div class="spec-label">Location</div>
+<div class="spec-value">Toulouse, France</div>
+</div>
+<div class="spec-row">
+<div class="spec-label">Network</div>
+<div class="spec-value"><a class="icon-link" href="https://www.linkedin.com/in/mohammed-jamai" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/svgs/brands/linkedin.svg" width="18"/>LinkedIn Profile</a></div>
+</div>
+<div class="spec-row">
+<div class="spec-label">Resume</div>
+<div class="spec-value contact-resume-links">
+<a download="" href="assets/resume/Mohammed_Jamai_Resume_EN.pdf">English</a>
+<a download="" href="assets/resume/Mohammed_Jamai_Resume_FR.pdf">Français</a>
+<a download="" href="assets/resume/Mohammed_Jamai_Resume_AR.pdf" lang="ar">العربية</a>
+</div>
+</div>
+</div>
+<a class="action-mailto" href="mailto:jamai-mohammed@hotmail.com">Write me an email</a>
+</section>
+<section class="view-section" id="view-terms">
+<span class="section-label">Legal</span>
+<h2 class="contact-large-header">Terms of Use</h2>
+<div class="terms-card">
+<p>This portfolio is provided for professional and informational purposes.</p>
+<p>Content, project descriptions, documents and external links are presented as a personal professional portfolio. Please do not reproduce private or proprietary material without permission.</p>
+<p>External links lead to third-party websites and are subject to their own terms and privacy policies.</p>
+</div>
+</section></main>
+</div>
+<script src="js/resources.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

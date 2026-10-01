@@ -2,21 +2,31 @@
    NAVIGATION — Profile (logo + name), Experiences, Projects, Resources, Contact
    ========================================================================== */
 
-function switchView(viewName) {
+function switchView(viewName, scrollTarget) {
     document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active-view'));
 
     const activeTarget = document.getElementById(`view-${viewName}`);
-    if (activeTarget) {
-        activeTarget.classList.add('active-view');
-    }
+    if (activeTarget) activeTarget.classList.add('active-view');
 
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.toggle('active', link.dataset.view === viewName);
+        link.classList.toggle('active', link.dataset.view === viewName && (!scrollTarget || link.dataset.scroll === scrollTarget));
     });
 
     closeMobileMenu();
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (scrollTarget && activeTarget) {
+        const anchor = document.getElementById(scrollTarget);
+        if (anchor) {
+            setTimeout(() => anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
+        }
+    }
 }
+
+// Start at the minimal landing page.
+document.addEventListener('DOMContentLoaded', () => {
+    switchView('landing');
+});
 
 /* Phone menu (below 600 px) */
 const mobileHeader = document.getElementById('mobile-header');
