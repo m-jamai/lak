@@ -34,13 +34,17 @@
 
             <nav aria-label="Main">
                 <ul class="nav-list">
-                    <li class="nav-link" data-view="profile" onclick="switchView('profile')">Profile</li>
-                    <li class="nav-link" data-view="experiences" onclick="switchView('experiences')">Experiences</li>
-                    <li class="nav-link" data-view="projects" onclick="switchView('projects')">Projects</li>
-                    <li class="nav-link" data-view="resources" onclick="switchView('resources')">Resources</li>
-                    <li class="nav-link" data-view="contact" onclick="switchView('contact')">Contact</li>
+                    <li class="nav-link" data-view="profile" onclick="switchView('profile')"><span class="nav-icon" aria-hidden="true">⌂</span><span>Experiences</span></li>
+                    <li class="nav-link" data-view="experiences" onclick="switchView('experiences')"><span class="nav-icon" aria-hidden="true">▢</span><span>Experiences</span></li>
+                    <li class="nav-link" data-view="projects" onclick="switchView('projects')"><span class="nav-icon" aria-hidden="true">□</span><span>Projects</span></li>
+                    <li class="nav-link" data-view="resources" onclick="switchView('resources')"><span class="nav-icon" aria-hidden="true">◫</span><span>Resources</span></li>
+                    <li class="nav-link" data-view="contact" onclick="switchView('contact')"><span class="nav-icon" aria-hidden="true">✉</span><span>Contact</span></li>
                 </ul>
             </nav>
+
+            <div class="sidebar-watermark" aria-hidden="true">
+                <img src="assets/img/logo-mark.svg" alt="">
+            </div>
 
             <div class="meta-block">
                 <div class="availability-line">
