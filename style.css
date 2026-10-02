@@ -2544,3 +2544,88 @@ main {
         height: 74px;
     }
 }
+
+/* ==========================================================================
+   REQUESTED REQ1–REQ9 ONLY
+   ========================================================================== */
+
+/* REQ1 — Powertrain centered inside its capability box. */
+#view-profile .capability:first-child {
+    text-align: center;
+}
+#view-profile .capability:first-child .capability-title,
+#view-profile .capability:first-child .capability-desc {
+    text-align: center;
+}
+
+/* REQ4 — logo is a compact, clearly clickable button; no name beside it. */
+aside > .brand-block {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+aside > .brand-block .logo-btn {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+aside > .brand-block .logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+aside > .brand-block:hover,
+aside > .brand-block:focus-visible {
+    border-color: var(--signal-orange);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 0 -1px var(--signal-orange);
+}
+aside > .brand-block:focus-visible {
+    outline: 1px solid var(--signal-orange);
+    outline-offset: 4px;
+}
+
+/* REQ9 — clients/programs are visually separated below the company experience. */
+.experience-clients {
+    margin-top: 10px;
+}
+.clients-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.client-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.client-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 2px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink-color);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* REQ3 — keep five social buttons usable without changing the card layout. */
+.profile-links {
+    flex-wrap: wrap;
+}
