@@ -2582,15 +2582,16 @@ main {
     width: 44px;
     height: 44px;
     object-fit: contain;
+    display: block;
 }
 .brand-block.brand-link:hover,
 .brand-block.brand-link:focus-visible {
-    border-color: var(--signal-orange);
+    border-color: var(--signal-green);
     transform: translateY(-1px);
-    box-shadow: 0 3px 0 -1px var(--signal-orange);
+    box-shadow: 0 3px 0 -1px var(--signal-green);
 }
 .brand-block.brand-link:focus-visible {
-    outline: 1px solid var(--signal-orange);
+    outline: 1px solid var(--signal-green);
     outline-offset: 4px;
 }
 
@@ -2627,4 +2628,19 @@ main {
     color: var(--ink-color);
     font-size: 11px;
     font-weight: 600;
+}
+
+
+/* Final logo asset sizing: square MJ mark, green accent, no orange. */
+.mobile-brand .logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+.landing-mark img {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    display: block;
 }

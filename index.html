@@ -24,13 +24,21 @@
 <div class="wrapper">
 <aside>
 <button aria-label="Go to Landing" class="brand-block brand-link" onclick="switchView('landing')">
-<span class="logo-btn"><img alt="MJ logo" class="logo" height="44" src="assets/img/mj-logo.png" width="44"/></span>
+<span class="logo-btn"><img alt="MJ logo" class="logo" height="44" src="assets/img/mj-logo.svg" width="44"/></span>
 </button>
 <nav aria-label="Main">
-<ul class="nav-list"><li class="nav-link" data-view="profile" onclick="switchView('profile')"><span>Experiences</span></li><li class="nav-link" data-view="projects" onclick="switchView('projects')"><span>Projects</span></li><li class="nav-link" data-view="resources" onclick="switchView('resources')"><span>Resources</span></li><li class="nav-link" data-view="contact" onclick="switchView('contact')"><span aria-hidden="true" class="nav-icon">✉</span><span>Contact</span></li></ul>
+<ul class="nav-list">
+<li class="nav-link" data-view="profile" onclick="switchView('profile')"><span>Profile</span></li>
+<li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')"><span>Education</span></li>
+<li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')"><span>Certifications</span></li>
+<li class="nav-link" data-view="experiences" onclick="switchView('experiences')"><span>Experiences</span></li>
+<li class="nav-link" data-view="projects" onclick="switchView('projects')"><span>Projects</span></li>
+<li class="nav-link" data-view="resources" onclick="switchView('resources')"><span>Resources</span></li>
+<li class="nav-link" data-view="contact" onclick="switchView('contact')"><span aria-hidden="true" class="nav-icon">✉</span><span>Contact</span></li>
+</ul>
 </nav>
 <div aria-hidden="true" class="sidebar-watermark">
-<img alt="" src="assets/img/mj-logo.png"/>
+<img alt="" src="assets/img/mj-logo.svg"/>
 </div>
 <div class="meta-block">
 <div class="availability-line">
@@ -40,7 +48,7 @@
 <div class="sidebar-footer-separator"></div><a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
 </aside>
 <header class="mobile-header" id="mobile-header">
-<button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="MJ logo" class="logo" height="38" src="assets/img/mj-logo.png" width="38"/>
+<button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="MJ logo" class="logo" height="38" src="assets/img/mj-logo.svg" width="38"/>
 </button>
 <button aria-controls="mobile-nav" aria-expanded="false" class="menu-toggle" id="menu-toggle">Menu</button>
 <ul class="mobile-nav" id="mobile-nav"><li class="nav-link" data-view="profile" onclick="switchView('profile')">Profile</li><li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')">Education</li><li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')">Certifications</li><li class="nav-link" data-view="experiences" onclick="switchView('experiences')">Experiences</li><li class="nav-link" data-view="projects" onclick="switchView('projects')">Projects</li><li class="nav-link" data-view="resources" onclick="switchView('resources')">Resources</li><li class="nav-link" data-view="contact" onclick="switchView('contact')">Contact</li></ul>
@@ -48,7 +56,7 @@
 <main><section class="view-section active-view" id="view-landing">
 <div class="landing-wrap">
 <div class="landing-card">
-<div class="landing-mark"><img alt="MJ logo" src="assets/img/mj-logo.png"/></div>
+<div class="landing-mark"><img alt="MJ logo" src="assets/img/mj-logo.svg"/></div>
 <div class="profile-name">Mohammed Jamai</div>
 <h1 class="landing-title">Mechatronics Systems Engineer</h1>
 <p class="landing-subtitle">Powertrain · Embedded Control &amp; Development · Model-Based Design</p>
