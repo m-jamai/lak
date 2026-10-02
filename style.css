@@ -2546,10 +2546,10 @@ main {
 }
 
 /* ==========================================================================
-   REQUESTED REQ1–REQ9 ONLY
+   REQUESTED PORTFOLIO UPDATES — scoped to REQ1–REQ9
    ========================================================================== */
 
-/* REQ1 — Powertrain centered inside its capability box. */
+/* REQ1 — only Powertrain's internal alignment changes. */
 #view-profile .capability:first-child {
     text-align: center;
 }
@@ -2558,45 +2558,50 @@ main {
     text-align: center;
 }
 
-/* REQ4 — logo is a compact, clearly clickable button; no name beside it. */
-aside > .brand-block {
-    width: 56px;
-    height: 56px;
+/* REQ4 — compact clickable logo control; no name is attached to it. */
+.brand-block.brand-link {
+    display: block;
+    width: 58px;
+    height: 58px;
+    padding: 6px;
     margin-bottom: 48px;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--tag-border);
     border-radius: 8px;
-    background: #fff;
+    background: #ffffff;
     box-sizing: border-box;
     transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-aside > .brand-block .logo-btn {
-    width: 44px;
-    height: 44px;
-    margin: 0;
+.brand-block.brand-link .logo-btn {
     display: grid;
     place-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
-aside > .brand-block .logo {
+.brand-block.brand-link .logo {
     width: 44px;
     height: 44px;
     object-fit: contain;
 }
-aside > .brand-block:hover,
-aside > .brand-block:focus-visible {
+.brand-block.brand-link:hover,
+.brand-block.brand-link:focus-visible {
     border-color: var(--signal-orange);
     transform: translateY(-1px);
     box-shadow: 0 3px 0 -1px var(--signal-orange);
 }
-aside > .brand-block:focus-visible {
+.brand-block.brand-link:focus-visible {
     outline: 1px solid var(--signal-orange);
     outline-offset: 4px;
 }
 
-/* REQ9 — clients/programs are visually separated below the company experience. */
+/* REQ3 — preserve the existing button language when five links are present. */
+.profile-links {
+    flex-wrap: wrap;
+}
+
+/* REQ9 — client identity is separate from the experience narrative. */
 .experience-clients {
-    margin-top: 10px;
+    margin: 10px 0 12px;
 }
 .clients-label {
     display: block;
@@ -2617,15 +2622,9 @@ aside > .brand-block:focus-visible {
     align-items: center;
     min-height: 24px;
     padding: 2px 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
+    border: 1px solid var(--tag-border);
     background: #fff;
     color: var(--ink-color);
     font-size: 11px;
     font-weight: 600;
-}
-
-/* REQ3 — keep five social buttons usable without changing the card layout. */
-.profile-links {
-    flex-wrap: wrap;
 }
