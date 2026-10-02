@@ -2,6 +2,19 @@
    NAVIGATION — Profile (logo + name), Experiences, Projects, Resources, Contact
    ========================================================================== */
 
+/* When a link jumps to an anchor, the scroll-follow below pauses briefly
+   so the highlight does not flicker on the way there. */
+let spyLockUntil = 0;
+
+function setActiveNav(viewName, anchorKey) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const isActive = link.dataset.view === viewName && (link.dataset.scroll || '') === (anchorKey || '');
+        link.classList.toggle('active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+    });
+}
+
 function switchView(viewName, scrollTarget) {
     document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active-view'));
 
@@ -9,14 +22,7 @@ function switchView(viewName, scrollTarget) {
     if (activeTarget) activeTarget.classList.add('active-view');
 
     // Only one item is highlighted: the exact view + anchor that was chosen.
-    document.querySelectorAll('.nav-link').forEach(link => {
-        const sameView = link.dataset.view === viewName;
-        const sameAnchor = (link.dataset.scroll || '') === (scrollTarget || '');
-        const isActive = sameView && sameAnchor;
-        link.classList.toggle('active', isActive);
-        if (isActive) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-    });
+    setActiveNav(viewName, scrollTarget);
 
     closeMobileMenu();
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -24,10 +30,38 @@ function switchView(viewName, scrollTarget) {
     if (scrollTarget && activeTarget) {
         const anchor = document.getElementById(scrollTarget);
         if (anchor) {
+            spyLockUntil = performance.now() + 1100;
             setTimeout(() => anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
         }
     }
 }
+
+/* Profile page: Profile / Education / Certifications follow the scroll */
+function updateProfileSpy() {
+    const view = document.getElementById('view-profile');
+    if (!view || !view.classList.contains('active-view')) return;
+    if (performance.now() < spyLockUntil) return;
+
+    const line = window.innerHeight * 0.38;
+    let key = '';
+    ['education', 'certifications'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) key = id;
+    });
+
+    // At the very bottom, the last section counts even if its title never reaches the line.
+    const doc = document.documentElement;
+    if (window.scrollY > 0 && window.innerHeight + window.scrollY >= doc.scrollHeight - 4) key = 'certifications';
+
+    setActiveNav('profile', key);
+}
+
+let spyTicking = false;
+window.addEventListener('scroll', () => {
+    if (spyTicking) return;
+    spyTicking = true;
+    requestAnimationFrame(() => { updateProfileSpy(); spyTicking = false; });
+}, { passive: true });
 
 // Start at the minimal landing page.
 document.addEventListener('DOMContentLoaded', () => {

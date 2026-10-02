@@ -5,11 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mohammed Jamai — Portfolio</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=Inter+Tight:wght@500..700&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin/>
 <meta name="description" content="Mohammed Jamai — Mechatronics Systems Engineer. Powertrain, Embedded Control &amp; Model-Based Design."/>
-<meta name="theme-color" content="#f6f6f3"/>
+<meta name="theme-color" content="#f7f7f4"/>
 <link rel="icon" type="image/png" href="assets/img/mj-logo.png"/>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -25,7 +24,7 @@
     Terms ........ terms of use
 -->
 <div class="wrapper">
-<aside>
+<aside class="sidebar">
 <button aria-label="Go to Landing" class="brand-block brand-link" onclick="switchView('landing')">
 <span class="logo-btn"><img alt="MJ logo" class="logo" height="44" src="assets/img/mj-logo.png" width="44"/></span>
 </button>
@@ -43,7 +42,7 @@
 <div class="meta-block">
 <div class="availability-line">
 <span class="status-dot"></span>Available for new projects</div>
-<div class="sidebar-footer-separator"></div><a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
+<a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
 </aside>
 <header class="mobile-header" id="mobile-header">
 <button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="MJ logo" class="logo" height="38" src="assets/img/mj-logo.png" width="38"/>
@@ -62,10 +61,12 @@
 </div>
 </section>
 <!-- ============================== PROFILE ============================== -->
-<section class="view-section" id="view-profile"><div class="profile-page-heading"><span class="section-label">Profile</span></div>
-<!-- Business card -->
+<section class="view-section" id="view-profile">
+<div class="profile-page-heading"><span class="section-label">Profile</span></div>
+<div class="profile-layout">
+<!-- Pinned rail: identity card + quick facts -->
+<div class="profile-rail">
 <article class="profile-card">
-<div class="profile-card-top">
 <div class="profile-photo">
 <img alt="Portrait of Mohammed Jamai" height="600" src="assets/img/profile.jpg" width="600"/>
 </div>
@@ -74,13 +75,16 @@
 <h1 class="profile-title">Mechatronics Systems Engineer</h1>
 <p class="profile-subtitle">Powertrain, Embedded Control &amp; Model-Based Design</p>
 <p class="profile-sectors">E-Mobility · Energy · Robotics &amp; Autonomous Systems</p>
-<div class="profile-meta">
-<span class="profile-location"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>Toulouse, France</span>
-<span class="availability-line"><span class="status-dot"></span>Available for new projects</span>
 </div>
-<div class="profile-languages"><span class="language-chip"><b>FR</b> Fluent</span><span class="language-chip"><b>EN</b> B2–C1</span><span class="language-chip"><b>AR</b> Native</span></div>
+</article>
+<ul class="profile-facts">
+<li class="profile-location"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg><span>Toulouse, France</span></li>
+<li><span class="availability-line"><span class="status-dot"></span>Available for new projects</span></li>
+<li class="profile-languages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c3 3.2 3 14.8 0 18"></path><path d="M12 3c-3 3.2-3 14.8 0 18"></path></svg><span class="language-chip"><b>FR</b> Fluent</span><span class="language-chip"><b>EN</b> B2–C1</span><span class="language-chip"><b>AR</b> Native</span></li>
+</ul>
 </div>
-</div>
+<!-- Scrolling column -->
+<div class="profile-main">
 <p class="profile-bio">I’m a Mechatronics Systems Engineer focused on turning complex electrified-system challenges into models, embedded control solutions and validated engineering systems. My work sits at the intersection of powertrain, embedded development and Model-Based Design, with a strong interest in e-mobility and energy. I enjoy connecting rigorous simulation with real-world performance—and bringing ideas from model to implementation.</p>
 <!-- Replace the GitHub and Jupyter URLs below with your own profiles -->
 <div class="profile-links">
@@ -90,18 +94,14 @@
 <a class="profile-btn" href="https://www.researchgate.net/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/researchgate.svg" width="18"/><span>ResearchGate</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
 <a class="profile-btn" href="https://hashnode.com/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/hashnode.svg" width="18"/><span>Hashnode</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
 </div>
-</article>
 <span class="section-label">Core Capabilities</span>
 <div class="capability-grid">
 <div class="capability"><div class="capability-title">Powertrain Systems</div><p class="capability-desc">Electric and hybrid powertrains, power electronics, machines and energy systems.</p></div>
 <div class="capability"><div class="capability-title">Embedded Control</div><p class="capability-desc">Embedded C/C++, diagnostics, CAN and safety-oriented ECU development.</p></div>
 <div class="capability"><div class="capability-title">Model-Based Design</div><p class="capability-desc">MATLAB/Simulink, plant and controller modeling, MiL and SiL workflows.</p></div>
 <div class="capability"><div class="capability-title">Validation &amp; Safety</div><p class="capability-desc">HiL verification, requirements traceability, ISO 26262 and FMEA practices.</p></div></div>
-
-
-
 <span class="section-label" id="education">Education</span>
-<div class="catalogue-list">
+<div class="catalogue-list edu-list">
 <div class="edu-item">
 <div class="edu-date">2019–2022</div>
 <div class="edu-details">
@@ -152,9 +152,9 @@
 
 
 </div>
-
-
 <button class="navigation-hint" onclick="switchView('experiences')">Professional and project experience on Experiences. <span aria-hidden="true">→</span></button>
+</div>
+</div>
 </section>
 <!-- ============================ EXPERIENCES ============================ -->
 <section class="view-section" id="view-experiences">
@@ -411,8 +411,12 @@
 <!-- ============================== CONTACT ============================== -->
 <section class="view-section" id="view-contact">
 <span class="section-label">Enquiries</span>
+<div class="contact-layout">
+<div class="contact-lead">
 <h2 class="contact-large-header">Contact</h2>
 <p class="contact-intro">Tell me about your system, your timeline, and where you're stuck. I reply within two working days.</p>
+<a class="action-mailto" href="mailto:jamai-mohammed@hotmail.com">Write me an email</a>
+</div>
 <div class="spec-sheet">
 <div class="spec-row">
 <div class="spec-label">Email</div>
@@ -435,7 +439,7 @@
 </div>
 </div>
 </div>
-<a class="action-mailto" href="mailto:jamai-mohammed@hotmail.com">Write me an email</a>
+</div>
 </section>
 <section class="view-section" id="view-terms">
 <span class="section-label">Legal</span>
