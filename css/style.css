@@ -1895,6 +1895,22 @@ main {
     border-radius: 0;
 }
 
+.nav-link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.nav-link-with-icon .nav-icon {
+    flex: 0 0 26px;
+}
+
+.nav-link-with-icon .nav-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
 .nav-icon {
     width: 26px;
     min-width: 26px;
