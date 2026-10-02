@@ -122,9 +122,10 @@ aside {
 }
 
 .logo {
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     display: block;
+    object-fit: contain;
 }
 
 .logo-accent {
@@ -132,7 +133,7 @@ aside {
 }
 
 .logo-btn:focus-visible {
-    outline: 1px solid var(--signal-orange);
+    outline: 1px solid var(--signal-green);
     outline-offset: 4px;
 }
 
@@ -2327,8 +2328,8 @@ main {
 }
 
 .landing-mark {
-    width: 92px;
-    height: 92px;
+    width: 104px;
+    height: 104px;
     margin: 0 auto 24px;
     display: grid;
     place-items: center;
@@ -2659,4 +2660,91 @@ main {
     height: 92px;
     object-fit: contain;
     display: block;
+}
+
+
+/* Final profile alignment pass — scoped only to the requested visual corrections. */
+
+/* Keep every desktop sidebar item on one consistent icon/text axis. */
+@media (min-width: 901px) {
+    .nav-list .nav-link.nav-link-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: 100%;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-list .nav-link.nav-link-with-icon .nav-icon {
+        width: 26px;
+        min-width: 26px;
+        flex: 0 0 26px;
+    }
+
+    .nav-list .nav-link.nav-link-with-icon .nav-icon svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+
+    /* The active marker sits at the left edge without changing text alignment. */
+    .nav-list .nav-link.active::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 24px;
+        margin: 0;
+    }
+}
+
+/* Make the portrait visually proportionate to the profile title. */
+@media (min-width: 901px) {
+    #view-profile .profile-photo {
+        width: clamp(168px, 15vw, 184px);
+    }
+}
+
+/* Keep the portrait comfortable on smaller layouts. */
+@media (max-width: 900px) {
+    #view-profile .profile-photo {
+        width: 150px;
+    }
+}
+
+/* More polished editorial reading width for the profile statement. */
+#view-profile .profile-bio {
+    max-width: none;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+}
+
+/* Keep the four capability cells structurally equal and visually balanced. */
+#view-profile .capability-grid {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#view-profile .capability {
+    min-width: 0;
+}
+
+#view-profile .capability:first-child {
+    text-align: center;
+}
+
+#view-profile .capability:first-child .capability-title,
+#view-profile .capability:first-child .capability-desc {
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
 }

@@ -24,13 +24,13 @@
 <div class="wrapper">
 <aside>
 <button aria-label="Go to Landing" class="brand-block brand-link" onclick="switchView('landing')">
-<span class="logo-btn"><img alt="MJ logo" class="logo" height="44" src="assets/img/mj-logo.svg" width="44"/></span>
+<span class="logo-btn"><img alt="MJ logo" class="logo" height="44" src="assets/img/mj-logo.png" width="44"/></span>
 </button>
 <nav aria-label="Main">
 <ul class="nav-list">
-<li class="nav-link" data-view="profile" onclick="switchView('profile')"><span>Profile</span></li>
-<li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')"><span>Education</span></li>
-<li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')"><span>Certifications</span></li>
+<li class="nav-link nav-link-with-icon" data-view="profile" onclick="switchView('profile')"><span aria-hidden="true" class="nav-icon nav-icon-profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 19.5c.8-3.2 3.1-5 6.5-5s5.7 1.8 6.5 5"></path></svg></span><span>Profile</span></li>
+<li class="nav-link nav-link-with-icon" data-scroll="education" data-view="profile" onclick="switchView('profile','education')"><span aria-hidden="true" class="nav-icon nav-icon-education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z"></path><path d="M4 5.5V19"></path><path d="M8 7h8"></path><path d="M8 10h6"></path></svg></span><span>Education</span></li>
+<li class="nav-link nav-link-with-icon" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')"><span aria-hidden="true" class="nav-icon nav-icon-certification"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.1 5l2.6-.1.9 2.4 2.1 1.5-1 2.4.4 2.6-2.4.8-1.5 2.1-2.4-1-2.6.4-.8-2.4-2.1-1.5 1-2.4-.4-2.6 2.4-.8L9.6 5 12 3.5Z"></path><path d="m9.5 11.5 1.6 1.6 3.6-3.7"></path></svg></span><span>Certifications</span></li>
 <li class="nav-link nav-link-with-icon" data-view="experiences" onclick="switchView('experiences')"><span aria-hidden="true" class="nav-icon nav-icon-experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="1.5"></rect><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"></path><path d="M4 11h16"></path><path d="M10 11v2h4v-2"></path></svg></span><span>Experiences</span></li>
 <li class="nav-link nav-link-with-icon" data-view="projects" onclick="switchView('projects')"><span aria-hidden="true" class="nav-icon nav-icon-project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path><path d="M4.5 7.7 12 11l7.5-3.3"></path><path d="M12 11v9"></path></svg></span><span>Projects</span></li>
 <li class="nav-link nav-link-with-icon" data-view="resources" onclick="switchView('resources')"><span aria-hidden="true" class="nav-icon nav-icon-resource"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21V5.5Z"></path><path d="M5 5.5V19"></path><path d="M9 7h6"></path><path d="M9 10h6"></path></svg></span><span>Resources</span></li>
@@ -38,7 +38,7 @@
 </ul>
 </nav>
 <div aria-hidden="true" class="sidebar-watermark">
-<img alt="" src="assets/img/mj-logo.svg"/>
+<img alt="" src="assets/img/mj-logo.png"/>
 </div>
 <div class="meta-block">
 <div class="availability-line">
@@ -48,7 +48,7 @@
 <div class="sidebar-footer-separator"></div><a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
 </aside>
 <header class="mobile-header" id="mobile-header">
-<button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="MJ logo" class="logo" height="38" src="assets/img/mj-logo.svg" width="38"/>
+<button aria-label="Go to Landing" class="logo-btn mobile-brand" onclick="switchView('landing')"><img alt="MJ logo" class="logo" height="38" src="assets/img/mj-logo.png" width="38"/>
 </button>
 <button aria-controls="mobile-nav" aria-expanded="false" class="menu-toggle" id="menu-toggle">Menu</button>
 <ul class="mobile-nav" id="mobile-nav"><li class="nav-link" data-view="profile" onclick="switchView('profile')">Profile</li><li class="nav-link" data-scroll="education" data-view="profile" onclick="switchView('profile','education')">Education</li><li class="nav-link" data-scroll="certifications" data-view="profile" onclick="switchView('profile','certifications')">Certifications</li><li class="nav-link" data-view="experiences" onclick="switchView('experiences')">Experiences</li><li class="nav-link" data-view="projects" onclick="switchView('projects')">Projects</li><li class="nav-link" data-view="resources" onclick="switchView('resources')">Resources</li><li class="nav-link" data-view="contact" onclick="switchView('contact')">Contact</li></ul>
@@ -56,7 +56,7 @@
 <main><section class="view-section active-view" id="view-landing">
 <div class="landing-wrap">
 <div class="landing-card">
-<div class="landing-mark"><img alt="MJ logo" src="assets/img/mj-logo.svg"/></div>
+<div class="landing-mark"><img alt="MJ logo" src="assets/img/mj-logo.png"/></div>
 <div class="profile-name">Mohammed Jamai</div>
 <h1 class="landing-title">Mechatronics Systems Engineer</h1>
 <p class="landing-subtitle">Powertrain · Embedded Control &amp; Development · Model-Based Design</p>
