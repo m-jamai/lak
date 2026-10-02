@@ -7,7 +7,10 @@
 <title>Mohammed Jamai — Portfolio</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=Inter+Tight:wght@500..700&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="Mohammed Jamai — Mechatronics Systems Engineer. Powertrain, Embedded Control &amp; Model-Based Design."/>
+<meta name="theme-color" content="#f6f6f3"/>
+<link rel="icon" type="image/png" href="assets/img/mj-logo.png"/>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -34,17 +37,12 @@
 <li class="nav-link nav-link-with-icon" data-view="experiences" onclick="switchView('experiences')"><span aria-hidden="true" class="nav-icon nav-icon-experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="1.5"></rect><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"></path><path d="M4 11h16"></path><path d="M10 11v2h4v-2"></path></svg></span><span>Experiences</span></li>
 <li class="nav-link nav-link-with-icon" data-view="projects" onclick="switchView('projects')"><span aria-hidden="true" class="nav-icon nav-icon-project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path><path d="M4.5 7.7 12 11l7.5-3.3"></path><path d="M12 11v9"></path></svg></span><span>Projects</span></li>
 <li class="nav-link nav-link-with-icon" data-view="resources" onclick="switchView('resources')"><span aria-hidden="true" class="nav-icon nav-icon-resource"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21V5.5Z"></path><path d="M5 5.5V19"></path><path d="M9 7h6"></path><path d="M9 10h6"></path></svg></span><span>Resources</span></li>
-<li class="nav-link" data-view="contact" onclick="switchView('contact')"><span aria-hidden="true" class="nav-icon">✉</span><span>Contact</span></li>
+<li class="nav-link nav-link-with-icon" data-view="contact" onclick="switchView('contact')"><span aria-hidden="true" class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"></rect><path d="m4 6.5 8 6 8-6"></path></svg></span><span>Contact</span></li>
 </ul>
 </nav>
-<div aria-hidden="true" class="sidebar-watermark">
-<img alt="" src="assets/img/mj-logo.png"/>
-</div>
 <div class="meta-block">
 <div class="availability-line">
-<span class="status-dot"></span>
-                    Available for new projects
-                </div>
+<span class="status-dot"></span>Available for new projects</div>
 <div class="sidebar-footer-separator"></div><a class="terms-link" href="#" onclick="switchView('terms'); return false;">Terms of Use</a></div>
 </aside>
 <header class="mobile-header" id="mobile-header">
@@ -66,21 +64,21 @@
 <!-- ============================== PROFILE ============================== -->
 <section class="view-section" id="view-profile"><div class="profile-page-heading"><span class="section-label">Profile</span></div>
 <!-- Business card -->
-<div class="profile-card">
+<article class="profile-card">
 <div class="profile-card-top">
 <div class="profile-photo">
 <img alt="Portrait of Mohammed Jamai" height="600" src="assets/img/profile.jpg" width="600"/>
 </div>
-
 <div class="profile-identity">
 <div class="profile-name">Mohammed Jamai</div>
 <h1 class="profile-title">Mechatronics Systems Engineer</h1>
 <p class="profile-subtitle">Powertrain, Embedded Control &amp; Model-Based Design</p>
 <p class="profile-sectors">E-Mobility · Energy · Robotics &amp; Autonomous Systems</p>
-<div class="profile-meta profile-meta-modern">
-<span>Toulouse, France</span>
-<span class="availability-line"><span class="status-dot"></span> Available for new projects</span>
-</div><div class="profile-languages-top"><span class="language-chip">FR · Fluent</span><span class="language-chip">EN · B2–C1</span><span class="language-chip">AR · Native</span></div>
+<div class="profile-meta">
+<span class="profile-location"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>Toulouse, France</span>
+<span class="availability-line"><span class="status-dot"></span>Available for new projects</span>
+</div>
+<div class="profile-languages"><span class="language-chip"><b>FR</b> Fluent</span><span class="language-chip"><b>EN</b> B2–C1</span><span class="language-chip"><b>AR</b> Native</span></div>
 </div>
 </div>
 <p class="profile-bio">I’m a Mechatronics Systems Engineer focused on turning complex electrified-system challenges into models, embedded control solutions and validated engineering systems. My work sits at the intersection of powertrain, embedded development and Model-Based Design, with a strong interest in e-mobility and energy. I enjoy connecting rigorous simulation with real-world performance—and bringing ideas from model to implementation.</p>
@@ -92,9 +90,13 @@
 <a class="profile-btn" href="https://www.researchgate.net/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/researchgate.svg" width="18"/><span>ResearchGate</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
 <a class="profile-btn" href="https://hashnode.com/" rel="noopener" target="_blank"><img alt="" class="brand-icon" height="18" loading="lazy" onerror="this.remove()" src="https://cdn.jsdelivr.net/npm/simple-icons@16.33.0/icons/hashnode.svg" width="18"/><span>Hashnode</span><span aria-hidden="true" class="profile-btn-arrow">↗</span></a>
 </div>
-</div>
+</article>
 <span class="section-label">Core Capabilities</span>
-<div class="capability-grid"><div class="capability"><div class="capability-title">Powertrain Systems</div><p class="capability-desc">Electric and hybrid powertrains, power electronics, machines and energy systems.</p></div><div class="capability"><div class="capability-title">Embedded Control</div><p class="capability-desc">Embedded C/C++, diagnostics, CAN and safety-oriented ECU development.</p></div><div class="capability"><div class="capability-title">Model-Based Design</div><p class="capability-desc">MATLAB/Simulink, plant and controller modeling, MiL and SiL workflows.</p></div><div class="capability"><div class="capability-title">Validation &amp; Safety</div><p class="capability-desc">HiL verification, requirements traceability, ISO 26262 and FMEA practices.</p></div></div>
+<div class="capability-grid">
+<div class="capability"><div class="capability-title">Powertrain Systems</div><p class="capability-desc">Electric and hybrid powertrains, power electronics, machines and energy systems.</p></div>
+<div class="capability"><div class="capability-title">Embedded Control</div><p class="capability-desc">Embedded C/C++, diagnostics, CAN and safety-oriented ECU development.</p></div>
+<div class="capability"><div class="capability-title">Model-Based Design</div><p class="capability-desc">MATLAB/Simulink, plant and controller modeling, MiL and SiL workflows.</p></div>
+<div class="capability"><div class="capability-title">Validation &amp; Safety</div><p class="capability-desc">HiL verification, requirements traceability, ISO 26262 and FMEA practices.</p></div></div>
 
 
 
@@ -152,7 +154,7 @@
 </div>
 
 
-<button class="navigation-hint" onclick="switchView('experiences')">Professional and project experience on Experiences. →</button>
+<button class="navigation-hint" onclick="switchView('experiences')">Professional and project experience on Experiences. <span aria-hidden="true">→</span></button>
 </section>
 <!-- ============================ EXPERIENCES ============================ -->
 <section class="view-section" id="view-experiences">
@@ -267,7 +269,7 @@
 <span class="section-label">Projects</span>
 <div class="project-list">
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">01</span><h2 class="project-title">CO₂ Emissions Calculation</h2></div>
 <p class="project-description">Tool to calculate and estimate CO₂ emissions from energy consumption and activity data, using standard emission factors, to compare scenarios and support lower-carbon decisions.</p>
@@ -283,7 +285,7 @@
 </div>
 </article>
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">02</span><h2 class="project-title">Brushless Motor Control</h2></div>
 <p class="project-description">Development of the control system of a brushless motor: commutation logic and speed and current control loops, designed and tuned in simulation before implementation on a microcontroller.</p>
@@ -299,7 +301,7 @@
 </div>
 </article>
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">03</span><h2 class="project-title">20 A Renault Charger</h2></div>
 <p class="project-description">Development and design of a 20 A charger for Renault: power stage architecture (PFC and DC/DC conversion), simulation models and validation of the charger behavior.</p>
@@ -315,7 +317,7 @@
 </div>
 </article>
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">04</span><h2 class="project-title">PMSM FEM Analysis</h2></div>
 <p class="project-description">Finite element analysis of a permanent magnet synchronous machine (PMSM): magnetic flux distribution, back-EMF, torque and cogging torque, with post-processing of the results in MATLAB.</p>
@@ -331,7 +333,7 @@
 </div>
 </article>
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">05</span><h2 class="project-title">MBD Model</h2></div>
 <p class="project-description">Model-Based Design workflow: plant and controller models built in Simulink, then verified through MiL and SiL tests against the requirements.</p>
@@ -347,7 +349,7 @@
 </div>
 </article>
 <article class="project-row">
-<div class="project-image-slot">[ Project image ]</div>
+<div class="project-image-slot"><span>Project image</span></div>
 <div class="project-body">
 <div class="project-head"><span class="project-index">06</span><h2 class="project-title">Capella / MBSE</h2></div>
 <p class="project-description">Model-Based Systems Engineering with Capella and the Arcadia method: operational analysis, then system, logical and physical architectures, with traceability from needs to components.</p>
@@ -363,8 +365,8 @@
 </div>
 </article>
 </div>
-<span class="section-label section-label-spaced">Technical Skills</span>
-                <p class="section-intro">Complete technical stack used across the projects above.</p>
+<span class="section-label">Technical Skills</span>
+<p class="section-intro">Complete technical stack used across the projects above.</p>
 <div class="spec-sheet">
 <div class="spec-row">
 <div class="spec-label">Modeling &amp; Simulation</div>

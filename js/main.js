@@ -8,8 +8,14 @@ function switchView(viewName, scrollTarget) {
     const activeTarget = document.getElementById(`view-${viewName}`);
     if (activeTarget) activeTarget.classList.add('active-view');
 
+    // Only one item is highlighted: the exact view + anchor that was chosen.
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.toggle('active', link.dataset.view === viewName && (!scrollTarget || link.dataset.scroll === scrollTarget));
+        const sameView = link.dataset.view === viewName;
+        const sameAnchor = (link.dataset.scroll || '') === (scrollTarget || '');
+        const isActive = sameView && sameAnchor;
+        link.classList.toggle('active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
     });
 
     closeMobileMenu();
@@ -18,7 +24,7 @@ function switchView(viewName, scrollTarget) {
     if (scrollTarget && activeTarget) {
         const anchor = document.getElementById(scrollTarget);
         if (anchor) {
-            setTimeout(() => anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
+            setTimeout(() => anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }), 40);
         }
     }
 }
@@ -26,9 +32,18 @@ function switchView(viewName, scrollTarget) {
 // Start at the minimal landing page.
 document.addEventListener('DOMContentLoaded', () => {
     switchView('landing');
+
+    // Navigation items are list elements: make them reachable by keyboard.
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.setAttribute('tabindex', '0');
+        link.setAttribute('role', 'link');
+        link.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); link.click(); }
+        });
+    });
 });
 
-/* Phone menu (below 600 px) */
+/* Top-bar menu (tablet and phone, below 900 px) */
 const mobileHeader = document.getElementById('mobile-header');
 const menuToggle = document.getElementById('menu-toggle');
 
@@ -44,6 +59,11 @@ if (menuToggle) {
         const open = mobileHeader.classList.toggle('menu-open');
         menuToggle.setAttribute('aria-expanded', String(open));
         menuToggle.textContent = open ? 'Close' : 'Menu';
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+    document.addEventListener('click', e => {
+        if (mobileHeader.classList.contains('menu-open') && !mobileHeader.contains(e.target)) closeMobileMenu();
     });
 }
 
